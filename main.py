@@ -16,7 +16,9 @@ def play_game():
   if level == "easy":
     player_turns = 10
 
-  while player_turns != 0:
+  guess = 0
+
+  while guess != answer:
     print(f"You have {player_turns} chances left.")
     guess = int(input("Take a guess: "))
 
@@ -24,17 +26,19 @@ def play_game():
       print("Correct You Win!")
     elif guess < answer:
       player_turns -= 1
-      print("Too Low")
+      print("Too Low, try again")
       print("Guess Again.")
     elif guess > answer:
       player_turns -= 1
-      print("Too High")
+      print("Too High, try again")
       print("Guess Again.")
     else:
       player_turns -= 1
       print("Guess Again.")
-  
 
+    if player_turns == 0:
+      return "You have no more turn you lose"
+  
 play_game()  
 # Allow the player to submit a guess for a number between 1 and 100.
 # Check user's guess against actual answer. Print "Too high." or "Too low." depending on the user's answer. 
