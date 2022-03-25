@@ -37,7 +37,7 @@ def play_game():
       print("Guess Again.")
 
     if player_turns == 0:
-      return "You have no more turn you lose"
+      return "You have no more turn, you lose"
   
 play_game()  
 # Allow the player to submit a guess for a number between 1 and 100.
